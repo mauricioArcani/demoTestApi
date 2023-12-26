@@ -1,0 +1,33 @@
+# SPRING
+spring:
+  # SERVLET
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  # JPA
+  jpa:
+
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    properties:
+      format_sql: true
+
+  # DATASOURCE
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5411/kbi_test_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+
+# LOGGING
+logging:
+  level:
+    root: ${LOGGING_LEVEL:INFO}
+
+server:
+  port: ${PORT_SERVER:8085}

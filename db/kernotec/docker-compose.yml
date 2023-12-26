@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+
+  kbi-test-db:
+    image: ${POSTGRESQL_IMAGE}
+    restart: always
+    hostname: kbi-test-db
+    container_name: kbi-test-db
+    ports:
+      - "5411:5432"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - kbi-test-db:/var/lib/postgresql/data
+
+    networks: 
+      - compose-net
+
+volumes:
+  kbi-test-db:
+    name: kbi-test-db
+
+networks:
+  compose-net:
+    external: true
