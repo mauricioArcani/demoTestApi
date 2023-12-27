@@ -6,6 +6,10 @@
 - Instalación Maven 3.6.3
 
 ## (OPCIONAL) Levantar la base de datos con Docker
+Crear una red docker con el siguiente comando
+```
+docker network create compose-net
+```
 Usando el archivo docker-compose del proyecto ->
 [docker-compose.yml](db%2Fkernotec%2Fdocker-compose.yml)
 - Si decea puede utilizar posgresql instalando en su equipo
